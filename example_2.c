@@ -10,10 +10,9 @@ int main()
       int i;
       int count;
 
-      count = 0;
-
 while ( scanf("%s", seq ) == 1 )
   {
+    count = 0;
     length = strlen( seq );  
     for ( i = 0 ; i < length ; i++ )
               {
