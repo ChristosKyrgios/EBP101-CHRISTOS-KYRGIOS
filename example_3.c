@@ -15,13 +15,13 @@ while ( scanf("%s", seq ) == 1 )
 
       for ( i = 0 ; i < length ; i++ )
               {
-                    if ( seq[i] == 'D' || 'E' || 'H' || 'K' || 'N' || 'Q' || 'R' )
+                    if ( seq[i] == 'D' || seq[i] == 'E' || seq[i] == 'H' || seq[i] == 'K' || seq[i] == 'N' || seq[i] == 'Q' || seq[i] =='R' )
                           { printf(" "); }
-                    else if ( seq[i] == 'S' || 'T' || 'G' )
+                    else if ( seq[i] == 'S' || seq[i] == 'T' || seq[i] == 'G' )
                           { printf("."); }
-                    else if ( seq[i] == 'A' || 'C' || 'M' || 'P' )
+                    else if ( seq[i] == 'A' || seq[i] == 'C' || seq[i] == 'M' || seq[i] == 'P' )
                           { printf(":"); }
-                    else if ( seq[i] == 'F' || 'I || 'L' || 'V' || 'W' || 'Y' )
+                    else if ( seq[i] == 'F' || seq[i] == 'I || seq[i] =='L' || seq[i] =='V' || seq[i] == 'W' || seq[i] == 'Y' )
                           { printf("*"); }
               }
       }
