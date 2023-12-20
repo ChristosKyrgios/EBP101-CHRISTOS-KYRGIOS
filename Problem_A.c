@@ -28,7 +28,8 @@ while ( scanf("%s", seq ) == 1 )
                                                             }
                                               }
                                     if ( minAminoAcids < 5 )
-                                              { count++; }                             
+                                              { count++; }
+                                    break;
                             }
             }
       if ( count == 0 )
