@@ -24,7 +24,7 @@ while ( scanf("%s", seq ) == 1 )
                                                       if ( (seq[j] == 'T' && seq[j+1] == 'A' && seq[j+2] == 'A') || (seq[j] == 'T' && seq[j+1] == 'A' && seq[j+2] == 'G') || (seq[j] == 'T' && seq[j+1] == 'G' && seq[j+2] == 'A') )
                                                             { 
                                                                   count++;
-                                                                  minAminoAcids = j - i / 3 ;
+                                                                  minAminoAcids = (j - i) / 3 ;
                                                             }
                                               }
                                     if ( minAminoAcids < 5 )
