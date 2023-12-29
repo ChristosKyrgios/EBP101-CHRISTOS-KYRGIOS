@@ -40,4 +40,8 @@ while ( scanf("%s", seq ) == 1 )
           { printf ("This sequence has a valid ORF\n"); }
  }
 
+return 0;
+
 }
+
+
