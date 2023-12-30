@@ -6,7 +6,7 @@ int main()
 
 {
 
-char seq[1000];
+char seq[1000];    /* Δηλώνω μεταβλητή τύπου string με μέγιστο μήκος τους 1000 χαρακτήρες, στην οποία θα αποθηκευτεί η αλληλουχία DNA */
 int i, j, length, count, minAminoAcids;
 
 while ( scanf("%s", seq ) == 1 )
