@@ -2,12 +2,41 @@
 #include <math.h>
 #include <string.h>
 
+void generateComplementary(char original[], char complementary[]) /* Η συνάρτηση δεν θα μας επιστρέψει κάποια τιμή. Γι'αυτό το λόγο ξεκινά με το void. Το όνομα της είναι generateComplementary και στις παραμέτρους ορίζονται οι δυο μεταβλητές τύπου string, δηλαδή h original και η complementary. Παρακάτω θα δούμε ότι στη θέση τους θα μπουν οι μεταβλητές seq και complementarySeq αντίστοιχα */
+    {
+    int i;
+    int length = strlen(original);
+    for (i = 0; i < length; i++) 
+        {
+        switch (original[i]) 
+              {
+                  case 'A':
+                      complementary[i] = 'T';
+                      break;
+                  case 'T':
+                      complementary[i] = 'A';
+                      break;
+                  case 'C':
+                      complementary[i] = 'G';
+                      break;
+                  case 'G':
+                      complementary[i] = 'C';
+                      break;
+                  default:
+                      complementary[i] = original[i];  // For any other character (e.g., N), keep it unchanged
+              }
+        }
+    complementary[length] = '\0';  // Add null terminator at the end
+  }
+
+
+
 int main()
 
 {
-
-char seq[1000];    /* Δηλώνω μεταβλητή τύπου string με μέγιστο μήκος τους 1000 χαρακτήρες, στην οποία θα αποθηκευτεί η αλληλουχία DNA */
-int i, j, length, count, minAminoAcids;  /* Δηλώνω μεταβλητές τύπου ακεραίου : για την αρχικοποίηση των επερχόμενων for (i και j), για το μήκος της αλληλουχίας (length), για τον μετρητή count που καθορίζει άμεσα το αποτέλεσμα (το αν μία αλληλουχία έχει ORF ή όχι) και το minAminoAcids ώστε να ελεγχθεί και ότι το μήκος του ORF είναι αρκετά μεγάλο ώστε αυτό να θεωρείται ένα έκγυρο ORF */ 
+  
+  char seq[1000];    /* Δηλώνω μεταβλητή τύπου string με μέγιστο μήκος τους 1000 χαρακτήρες, στην οποία θα αποθηκευτεί η αλληλουχία DNA */
+  int i, j, length, count, minAminoAcids;  /* Δηλώνω μεταβλητές τύπου ακεραίου : για την αρχικοποίηση των επερχόμενων for (i και j), για το μήκος της αλληλουχίας (length), για τον μετρητή count που καθορίζει άμεσα το αποτέλεσμα (το αν μία αλληλουχία έχει ORF ή όχι) και το minAminoAcids ώστε να ελεγχθεί και ότι το μήκος του ORF είναι αρκετά μεγάλο ώστε αυτό να θεωρείται ένα έκγυρο ORF */ 
 
 while ( scanf("%s", seq ) == 1 )  /* Με την εντολή αυτή το πρόγραμμα διαβάζει και εκτελεί όσα υπάρχουν μέσα στην while για πολλές αλληλουχίες που μπορεί να πληκτρολογήσει ο χρήστης */
   {
