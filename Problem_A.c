@@ -2,7 +2,7 @@
 #include <math.h>
 #include <string.h>
 
-void generateComplementary(char original[], char complementary[]) /* Η συνάρτηση δεν θα μας επιστρέψει κάποια τιμή. Γι'αυτό το λόγο ξεκινά με το void. Το όνομα της είναι generateComplementary και στις παραμέτρους ορίζονται οι δυο μεταβλητές τύπου string, δηλαδή h original και η complementary. Παρακάτω θα δούμε ότι στη θέση τους θα μπουν οι μεταβλητές seq και complementarySeq αντίστοιχα */
+void generateComplementary(char original[], char complementary[]) /* Η συνάρτηση δεν θα μας επιστρέψει κάποια τιμή. Γι'αυτό το λόγο ξεκινά με το void. Το όνομα της είναι generateComplementary και στις παραμέτρους ορίζονται οι δυο μεταβλητές τύπου string, δηλαδή η original και η complementary. Παρακάτω θα δούμε ότι στη θέση τους θα μπουν οι μεταβλητές seq και complementarySeq αντίστοιχα */
     {
     int i;
     int length = strlen(original);
