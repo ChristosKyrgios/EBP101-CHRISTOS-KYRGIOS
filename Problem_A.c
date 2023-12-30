@@ -2,32 +2,34 @@
 #include <math.h>
 #include <string.h>
 
-void generateComplementary(char original[], char complementary[]) /* Η συνάρτηση δεν θα μας επιστρέψει κάποια τιμή. Γι'αυτό το λόγο ξεκινά με το void. Το όνομα της είναι generateComplementary και στις παραμέτρους ορίζονται οι δυο μεταβλητές τύπου string, δηλαδή η original και η complementary. Παρακάτω θα δούμε ότι στη θέση τους θα μπουν οι μεταβλητές seq και complementarySeq αντίστοιχα */
-    {
+/* Η συνάρτηση δεν θα μας επιστρέψει κάποια τιμή. Γι'αυτό το λόγο ξεκινά με το void. Το όνομα της είναι generateReverseComplementary και στις παραμέτρους ορίζονται οι δυο μεταβλητές τύπου string, δηλαδή η original και η reverseComplementary. Παρακάτω θα δούμε ότι στη θέση τους θα μπουν οι μεταβλητές seq και reverseComplementarySeq αντίστοιχα */
+   void generateReverseComplementary(char original[], char reverseComplementary[]) 
+{
     int i;
     int length = strlen(original);
+    
     for (i = 0; i < length; i++) 
-        {
+    {
         switch (original[i]) 
-              {
-                  case 'A':
-                      complementary[i] = 'T';
-                      break;
-                  case 'T':
-                      complementary[i] = 'A';
-                      break;
-                  case 'C':
-                      complementary[i] = 'G';
-                      break;
-                  case 'G':
-                      complementary[i] = 'C';
-                      break;
-                  default:
-                      complementary[i] = original[i];  // For any other character (e.g., N), keep it unchanged
-              }
+        {
+            case 'A':
+                reverseComplementary[length - i - 1] = 'T';
+                break;
+            case 'T':
+                reverseComplementary[length - i - 1] = 'A';
+                break;
+            case 'C':
+                reverseComplementary[length - i - 1] = 'G';
+                break;
+            case 'G':
+                reverseComplementary[length - i - 1] = 'C';
+                break;
+            default:
+                reverseComplementary[length - i - 1] = original[i];  // For any other character (e.g., N), keep it unchanged
         }
-    complementary[length] = '\0';  // Add null terminator at the end
-  }
+    }
+    reverseComplementary[length] = '\0';  // Add null terminator at the end
+}
 
 
 
@@ -56,7 +58,7 @@ while ( scanf("%s", seq ) == 1 )  /* Με την εντολή αυτή το πρ
                                                                   minAminoAcids = (j - i) / 3 ;
                                                             }
                                               }
-                                    if ( minAminoAcids > 5 ) /* Αφού εκτελεστεί η προηγούμενη for, με την συγκεκριμένη if μπορεί να οριστεί ένα ελάχιστο μήκος σε αμινοξέα που θεωρούμε αποδεκτό ότι αντιπροσωπεύει ένα έγκυρο ORF */
+                                    if ( minAminoAcids > 100 ) /* Αφού εκτελεστεί η προηγούμενη for, με την συγκεκριμένη if μπορεί να οριστεί ένα ελάχιστο μήκος σε αμινοξέα που θεωρούμε αποδεκτό ότι αντιπροσωπεύει ένα έγκυρο ORF. Αυτό για ένα απλό βακτηριακό ORF τυπικά θεωρείται ως τα 100 αμινοξέα. */
                                               { count++; }
                                     break; /* Το break εξασφαλίζει ότι αφού βρεθεί ένα ATG, δεν θα ξεκινήσει η αναζήτηση εκ νέου αν μέσα στο ORF υπάρχουν και άλλα κωδικόνια ATG */
                             }
