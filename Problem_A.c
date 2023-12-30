@@ -28,9 +28,8 @@ void generateReverseComplementary(char original[], char reverseComplementary[])
                 reverseComplementary[length - i - 1] = original[i];  
         }
     }
-    reverseComplementary[length] = '\0';  // Add null terminator at the end
+    reverseComplementary[length] = '\0';  /* Με αυτόν τον τρόπο εξασφαλίζεται ότι το μετά τον τελευταίο χαρακτήρα του string θα μπει ένας χαρακτήρας null ώστε να σημανθεί το τέλος της αλληλουχίας, κάτι απαραίτητο για τη γλώσσα προγραμματισμού C */
 }
-
 
 
 int main()
@@ -65,7 +64,7 @@ while ( scanf("%s", seq ) == 1 )  /* Με την εντολή αυτή το πρ
                             }
             }
 
-      generateReverseComplementary(seq, reverseComplementarySeq);
+      generateReverseComplementary(seq, reverseComplementarySeq); /* Επανάληψη της διαδικασίας για τη συμπληρωματική αλληλουχία. */
       for ( i = 0 ; i < length ; i++ ) 
             {
                     if ( reverseComplementarySeq[i] == 'A' && reverseComplementarySeq[i+1] == 'T' && reverseComplementarySeq[i+2] == 'G' )
@@ -84,9 +83,7 @@ while ( scanf("%s", seq ) == 1 )  /* Με την εντολή αυτή το πρ
                             }
             }
 
-
-     
-      if ( count == 0 ) /* Στις ακόλουθες if, ο μετρτής count ανάλογα την τιμή που έχει λάβει μετά την αναζήτηση, μπορεί να δώσει τρία πιθανά αποτελέσματα : α) Δεν υπάρχει ORF στην αλληλουχία όταν count = 0, β) Υπάρχει ORF στην αλληλουχία αλλά δεν έχει επαρκώς μεγάλο αριθμό αμινοξέων όταν count = 2 και γ) Υπάρχει ORF όταν count = 2 */
+      if ( count == 0 ) /* Στις ακόλουθες if, ο μετρητής count ανάλογα την τιμή που έχει λάβει μετά την αναζήτηση, μπορεί να δώσει τρία πιθανά αποτελέσματα : α) Δεν υπάρχει ORF στην αλληλουχία όταν count = 0, β) Υπάρχει ORF στην αλληλουχία αλλά δεν έχει επαρκώς μεγάλο αριθμό αμινοξέων όταν count = 2 και γ) Υπάρχει ORF όταν count = 2 */
           { printf ("This sequence does not have an ORF\n"); }
       else if ( count == 1 )
           { printf ("This sequence does not have a large enough ORF (with more than 100 aminoacids\n"); }
