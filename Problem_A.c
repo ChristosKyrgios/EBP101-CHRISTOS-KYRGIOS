@@ -86,7 +86,7 @@ while ( scanf("%s", seq ) == 1 )  /* Με την εντολή αυτή το πρ
       if ( count == 0 ) /* Στις ακόλουθες if, ο μετρητής count ανάλογα την τιμή που έχει λάβει μετά την αναζήτηση, μπορεί να δώσει τρία πιθανά αποτελέσματα : α) Δεν υπάρχει ORF στην αλληλουχία όταν count = 0, β) Υπάρχει ORF στην αλληλουχία αλλά δεν έχει επαρκώς μεγάλο αριθμό αμινοξέων όταν count = 2 και γ) Υπάρχει ORF όταν count = 2 */
           { printf ("This sequence does not have an ORF\n"); }
       else if ( count == 1 )
-          { printf ("This sequence does not have a large enough ORF (with more than 100 aminoacids)\n";) }
+          { printf ("This sequence does not have a large enough ORF (with more than 100 aminoacids)\n"); }
       else if ( count == 2 )
           { printf ("This sequence has a valid ORF\n"); }
     
